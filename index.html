@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Animations</title>
+</head>
+<body>
+    <div class="logo">
+        <h1>Apli.ai</h1>
+        <div class="sneaker">
+            <div class="circle1"></div>
+            <img src="apli-blackk1.png" alt="logo">
+        </div>
+    </div>
+    <div class="container">
+        <div class="card-container">
+            <div class="card">
+                <figure class="front">
+                    <div class="sneaker">
+                        <div class="circle"></div>
+                        <img src="pic.png" alt="adidas">
+                    </div>
+                    <h1>Vaibhav singh</h1>
+                    <h3>
+                        scroll mouse here to see chart
+                    </h3>
+                </figure>
+                <figure class="back">
+                    <canvas id="mychart"></canvas>
+                </figure> 
+            </div>
+        </div>
+        <div class="slide">
+            <ul class="unorder">
+                <!--<button class="btnprev" onclick="prev()">Prev</button>-->
+                <li><a href="#" class="prev"> < Prev </a></li>
+                <li class="pageNumber active"><a href="#">1</a></li>
+                <li class="pageNumber"><a href="#">2</a></li>
+                <li class="pageNumber"><a href="#">3</a></li>
+                <li class="pageNumber"><a href="#">4</a></li>
+                <li><a href="#" class="next">Next> </a></li>
+                <!--<button class="btnnext" onclick="next()">Next</button>-->
+            </ul>
+            <iframe class="video_id" width="560" height="315" 
+                src="https://www.youtube.com/embed/-fhCcuLlJEk" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+            <input type="text" name="comment" id="comment_id"  placeholder="Enter comment">
+            <div class="btn">
+                <button id="Save">Save</button>
+                <button class="Submit" type="submit" onclick= "location.href='result.html'">Final Submit</button>
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="card">
+                <div class="front1">
+                    <h1 class="head">Grading System</h1>
+                    <button class="btnid" value="1">1</button>
+                    <button class="btnid" value="2">2</button>
+                    <button class="btnid" value="3">3</button>
+                    <button class="btnid" value="4">4</button>
+                    <button class="btnid" value="5">5</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="jquery-3.4.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+    let myChart = document.getElementById('mychart').getContext('2d');
+
+    let massPopChart = new Chart(myChart, {
+      type:'radar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+      data:{
+        labels:['O', 'C','E', 'A', 'N'],
+        datasets:[{
+          label:'Range-1to5',
+          data:[1,2,3,4,5],
+          //backgroundColor:'green',
+          backgroundColor:[
+            'rgba(255, 99, 132, 0.6)'
+          ]
+        }]
+      }
+    });
+    </script>
+
+</body>
+</html>
